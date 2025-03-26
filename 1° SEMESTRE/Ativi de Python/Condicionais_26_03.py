@@ -1,7 +1,132 @@
 # exer 1
+'''
 num = int(input("Insira um número: "))
 
-if num // 4 == 0:
-    print(f"O número {num} é par")
+if num % 2 == 0:
+    print(f"O número {num} é par.")
 else:
-    print(f"O número {num} não é par")
+    print(f"O número {num} não é par.")
+'''
+
+# exer 2
+'''
+num =  int(input("Insira um número: "))
+
+if num > 10:
+    print(f"O número {num} é maior que 10.")
+else:
+    print(f"O número {num} não é maior que 10.")
+'''
+
+# exer 3
+'''
+idade = int(input("Insira a sua idade: "))
+
+if idade >= 18:
+    print("Você é maior de idade!")
+else:
+    print("Parece que você não é maior de idade.")
+'''
+
+# exer 4
+'''
+idade = int(input("Qual a sua idade: "))
+
+if idade < 16:
+    print("Voto não obrigatorio. Você ainda não tem idade para votar!")
+elif idade >= 60:
+    print("Voto Opcional. Não há a necessidade de voto.")
+else:
+    print("Voto obrigatório.")
+'''
+
+# exer 5
+'''
+num = int(input("Insira o número: "))
+
+if num == 0:
+    print(f"O número é {num}")
+elif num >= 0:
+    print("O numero é positivo!")
+else:
+    print("O número é negativo")
+'''
+
+# exer 6
+'''
+nota = int(input("Insira a nota do aluno: "))
+
+if nota >= 9:
+    print("A")
+elif nota == 7:
+    print("B")
+elif nota >= 5:
+    print("C")
+elif nota >= 3:
+    print("D")
+else:
+    print("E")
+'''
+
+# exer 7
+'''
+idade =  int(input("Informe a sua idade, para saber de tem direito a desconto:"))
+
+if idade >= 18 and idade <= 60:
+    print("Você não tem direito a desconto.")
+else:
+    print("Você tem direito a desconto")
+'''
+
+# exer 8
+'''
+lad1 = int(input("Insira o tamanho de um dos lados do possivel triangulo: "))
+lad2 = int(input("Insira o tamanho de um dos lados do possivel triangulo: "))
+base = int(input("Insira o tamanho da base do possivel triangulo: "))
+
+
+if (lad1 + lad2) >= base:
+    print("É um triangulo")
+    if lad1 == lad2 and lad2 == base and base == lad1:
+        print("Triangulo equilátero")
+    elif lad1 == lad2 and lad1 != base:
+        print("Triangulo isósceles")
+    else:
+        print("Triangulo escaleno")
+elif (lad2 + base) >= lad1:
+    print("É um triangulo")
+    if lad1 == lad2 and lad2 == base and base == lad1:
+        print("Triangulo equilátero")
+    elif lad1 != lad2 and lad1 != base and lad2 != base:
+        print("Triangulo escaleno")
+    else:
+        print("Triangulo isosceles")
+elif (lad1 + base) >= lad2:
+    print("É um triangulo")
+    if lad1 == lad2 and lad2 == base and base == lad1:
+        print("Triangulo equilátero")
+    elif lad1 == lad2 and lad1 != base:
+        print("Triangulo isósceles")
+    else:
+        print("Triangulo escaleno")
+else:
+    print("Não é um triangulo")
+'''
+
+# exer 9
+'''
+valor = int(input("Qual o valor da compra? "))
+
+if valor < 100:
+    desconto = valor * (5/100)
+    print(f"Você recebeu o desconto de 5%. O valor da sua compra é de R${desconto}")
+elif valor >= 100 and valor <= 500:
+    desconto = valor * (10/100)
+    print(f"Você recebeu o desconto de 10%. O valor total da compra é R${desconto}")
+else:
+    desconto = valor * (15/100)
+    print(f"Você recebeu o desconto de 15%. O valor total da compra é R${desconto}")
+'''
+
+# exer 10
+
