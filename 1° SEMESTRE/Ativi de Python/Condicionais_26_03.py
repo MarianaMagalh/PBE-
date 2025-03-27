@@ -129,4 +129,43 @@ else:
 '''
 
 # exer 10
+'''
+ano = int(input("Insira um ano: "))
+
+if ano % 4 == 0 or ano % 400 == 0:
+    print("O ano é bissexto.")
+else:
+    print("O ano não é bissexto.")
+
+'''
+
+# exer 11
+'''
+altura = float(input("Insira a sua altura: "))
+peso =  float(input("Insira o seu peso: "))
+
+imc = peso / (altura * altura)
+
+if imc <= 18.5:
+    print("Abaixo do peso.")
+elif imc >= 18.5 and imc <= 24.9:
+    print("Peso normal.")
+elif imc >= 25 and imc <= 29.9:
+    print("Sobrepeso.")
+else:
+    print("Obesidade.")
+
+'''
+
+# exer 11
+num1 = int(input("Insira um número: "))
+num2 = int(input("Insira um outro número: "))
+num3 = int(input("Insira mais um número: "))
+
+if num1 == num2 and num2 == num3 and num3 == num1:
+    print("São iguais.")
+
+
+
+
 
