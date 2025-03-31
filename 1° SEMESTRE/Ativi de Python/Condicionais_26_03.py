@@ -164,7 +164,12 @@ num3 = int(input("Insira mais um número: "))
 
 if num1 == num2 and num2 == num3 and num3 == num1:
     print("São iguais.")
-
+elif num1 < num2 and num1 < num3 and num2 < num3:
+    print("Crescente.")
+elif num1 > num2 and num2 > num3 and num1 > num3:
+    print("Decrescente.")
+else:
+    print("numeros invalidos")
 
 
 
