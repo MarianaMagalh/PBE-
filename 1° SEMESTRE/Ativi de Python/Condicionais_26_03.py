@@ -190,12 +190,66 @@ else:
 '''
 from datetime import datetime
 
-data = input("Insira a sua data de nascimento, ex [d/m/A]: ")
+data = input("Insira uma data, ex [d/m/A]: ")
 
 data2 = datetime.strptime(data, "%d/%m/%Y")
 print(data2)
 '''
 
 # exer 15
+'''
+import re
+
+senha = input("Insira uma senha: ")
+
+if len(senha) < 8:
+    print("Senha inválida")
+    print("A senha deve ter no minimo 8 caracteres.")
+elif senha.islower():
+    print("Senha inválida")
+    print("A senha precisa ter pelo menos um caractere maiusculo.")
+elif senha.isalpha():
+    print("Senha inválida")
+    print("A senha precisa ter um número.")
+elif senha.isalnum():
+    print("Senha inválida")
+    print("A senha precisa de um caracter especial.")
+else:
+    print("Senha válida")
+'''
+
+# exer 16
+'''
+num = float(input("Digite um número: "))
+
+if num < 0:
+    print("Não é possível calcular a raiz quadrada de um número negativo")
+elif num > 100:
+    print("Número muito grande, reduza para um número abaixo de 100.")
+else:
+    razqua = num ** (1 / 2)
+    print(f"A raiz quadrada é {razqua:,.2f}")
+'''
+
+# exer 17
+data = str(input("Insira um data: "))
+
+val = data.split("/")[0]
+val1 = data.split("/")[1]
+val2 = data.split("/")[2]
+
+if val1 < 1 or val1 > 12:
+    print("Mês invalido.")
+
+print(val)
+
+
+
+
+
+
+
+
+
 
 
