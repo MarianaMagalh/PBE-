@@ -157,7 +157,8 @@ else:
 
 '''
 
-# exer 11
+# exer 12
+'''
 num1 = int(input("Insira um número: "))
 num2 = int(input("Insira um outro número: "))
 num3 = int(input("Insira mais um número: "))
@@ -170,7 +171,28 @@ elif num1 > num2 and num2 > num3 and num1 > num3:
     print("Decrescente.")
 else:
     print("numeros invalidos")
+'''
 
+# exer 13
+'''
+temC = float(input("Insira a temperantura atual: "))
 
+if temC < 10:
+    print("Frio")
+elif temC >= 10 and temC < 25:
+    print("Aconchegante")
+elif temC >= 25 and temC < 40:
+    print("Quente")
+else:
+    print("Muito Quente")
+'''
 
+# exer 14
+'''
+from datetime import datetime
 
+data = input("Insira a sua data de nascimento, ex [d/m/A]: ")
+
+data2 = datetime.strptime(data, "%d/%m/%Y")
+print(data2)
+'''
