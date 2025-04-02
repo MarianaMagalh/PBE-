@@ -5,7 +5,7 @@ num = int(input("Insira um número: "))
 if num % 2 == 0:
     print(f"O número {num} é par.")
 else:
-    print(f"O número {num} não é par.")
+    print(f"O número {num} é impar.")
 '''
 
 # exer 2
@@ -163,14 +163,13 @@ num1 = int(input("Insira um número: "))
 num2 = int(input("Insira um outro número: "))
 num3 = int(input("Insira mais um número: "))
 
-if num1 == num2 and num2 == num3 and num3 == num1:
-    print("São iguais.")
-elif num1 < num2 and num1 < num3 and num2 < num3:
-    print("Crescente.")
-elif num1 > num2 and num2 > num3 and num1 > num3:
-    print("Decrescente.")
+if num1 < num2 and num2 < num3:
+    print("Ordem crescente")
+elif num1 > num2 and num2 > num3:
+    print("Oredem decrescente")
 else:
-    print("numeros invalidos")
+    print("Sem ordem os números são iguais")
+
 '''
 
 # exer 13
@@ -196,3 +195,7 @@ data = input("Insira a sua data de nascimento, ex [d/m/A]: ")
 data2 = datetime.strptime(data, "%d/%m/%Y")
 print(data2)
 '''
+
+# exer 15
+
+
