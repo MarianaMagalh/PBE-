@@ -5,7 +5,7 @@ num = int(input("Insira um número: "))
 if num % 2 == 0:
     print(f"O número {num} é par.")
 else:
-    print(f"O número {num} é impar.")
+    print(f"O número {num} não é par.")
 '''
 
 # exer 2
@@ -163,13 +163,14 @@ num1 = int(input("Insira um número: "))
 num2 = int(input("Insira um outro número: "))
 num3 = int(input("Insira mais um número: "))
 
-if num1 < num2 and num2 < num3:
-    print("Ordem crescente")
-elif num1 > num2 and num2 > num3:
-    print("Oredem decrescente")
+if num1 == num2 and num2 == num3 and num3 == num1:
+    print("São iguais.")
+elif num1 < num2 and num1 < num3 and num2 < num3:
+    print("Crescente.")
+elif num1 > num2 and num2 > num3 and num1 > num3:
+    print("Decrescente.")
 else:
-    print("Sem ordem os números são iguais")
-
+    print("numeros invalidos")
 '''
 
 # exer 13
@@ -190,11 +191,12 @@ else:
 '''
 from datetime import datetime
 
-data = input("Insira uma data, ex [d/m/A]: ")
+data = input("Insira uma data: ")
 
 data2 = datetime.strptime(data, "%d/%m/%Y")
 print(data2)
 '''
+
 
 # exer 15
 '''
@@ -220,33 +222,80 @@ else:
 
 # exer 16
 '''
-num = float(input("Digite um número: "))
+numero = float(input("Digite um número: "))
 
-if num < 0:
-    print("Não é possível calcular a raiz quadrada de um número negativo")
-elif num > 100:
-    print("Número muito grande, reduza para um número abaixo de 100.")
+if numero < 0:
+    print("Digito invalido, insira um numero positivo.")
+elif numero > 100:
+    print("Digito invalido, insira um numero menor que 100")
 else:
-    razqua = num ** (1 / 2)
-    print(f"A raiz quadrada é {razqua:,.2f}")
+    calculo = numero ** (1/2)
+    print(f"A raiz quadrada é {calculo:,.2f}")
 '''
 
 # exer 17
-data = str(input("Insira um data: "))
+'''
+import re
 
-val = data.split("/")[0]
-val1 = data.split("/")[1]
-val2 = data.split("/")[2]
+data = input("Insira uma data: ")
 
-if val1 < 1 or val1 > 12:
-    print("Mês invalido.")
+regra = r"^\d{2}/\d{2}/\d{4}$"
+valid = re.match(regra, data)
 
-print(val)
+if valid:
+    dia, mes, ano = data.split('/')
+    datam = f'{ano}-{mes}-{dia}'
+    if int(mes) == 2:
+        if (int(ano) % 4 == 0 and int(ano) % 100 != 0) or (int(ano) % 400 == 0):
+            if int(dia) >= 1 and int(dia) <= 29:
+                print("Dia valido.")
+                print(f"A data formatada é {datam}")
+            else:
+                print("Dia invalido, insira um dia valido, entre 1 e 29 dias")
+        else:
+            if int(dia) >= 1 and int(dia) <= 28:
+                print(f"Dia valido")
+                print(f"A data formatada é {datam}")
+            else:
+                print("Dia invalido, insira um dia valido, entre 1 e 28 dias")
+    elif int(mes) == 1 or int(mes) == 3 or int(mes) == 5 or int(mes) == 7 or int(mes) == 8 or int(mes) == 10 or int(mes) == 12:
+        if int(dia) >= 1 and int(dia) <= 31:
+            print("Dia valido")
+            print(f"A data formatada é {datam}")
+        else:
+            print("Dia invalido, insira um dia valido, entre 1 e 31 dias")
+    elif int(mes) == 4 or int(mes) == 6 or int(mes) == 9 or int(mes) == 11:
+        if int(dia) >= 1 and int(dia) <= 30:
+            print("Dia valido")
+            print(f"A dara formatda é {datam}")
+        else:
+            print("Dia invalido, insira um dia valido, entre 1 e 30 dias")
+    else:
+        print("Mes invalido")
+else:
+    print("Invalido, insira uma data valida.")
+'''
 
+# exer 19 - desafio
+import re
 
+cpf = input("Digite o CPF: ")
+cpf = re.sub(r'\D', '', cpf)  
 
+if not cpf.isdigit() or len(cpf) != 11:
+    print("CPF Inválido")
+else:
+    pesos = [10, 9, 8, 7, 6, 5, 4, 3, 2]
+    soma = sum(int(cpf[i]) * pesos[i] for i in range(9))
+    resto = soma % 11
+    primeiro_digito = '0' if resto < 2 else str(11 - resto)
 
+    pesos = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2]
+    soma = sum(int(cpf[i]) * pesos[i] for i in range(10))
+    resto = soma % 11
+    segundo_digito = '0' if resto < 2 else str(11 - resto)
 
+    print("CPF Válido" if cpf[-2:] == primeiro_digito + segundo_digito else "CPF Inválido")
 
 
 
