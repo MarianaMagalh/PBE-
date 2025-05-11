@@ -54,7 +54,7 @@ def tabuada(num):
 
 for numero in numeros:
     print(tabuada(numero))
-"""
+
 
 # exer 5
 
@@ -66,4 +66,93 @@ def verificacao(idade):
     else:
         return print("Você não tem idade para ver o filme.\nEscolha outro filme!")
 
-print(verificacao(idade_cli))
+for idade in idade_cli:
+    print(verificacao(idade))
+
+
+# exer 6
+produtos = [50, 120, 200]
+
+def desconto(preco):
+    des = preco * (10/100)
+    return des
+
+def preco_final(preco):
+    preco_final = preco - desconto(preco)
+    return preco_final
+
+for produto in produtos:
+    print(f"O valor final com desconto é: {preco_final(produto)}")
+
+
+# exer 7
+# len()
+poema = ("casa", "paralelepípedo", "python")
+
+def quantidade(palavras):
+    return len(palavras)
+
+for palavra in poema:
+    print(f"A palavra {palavra} tem {quantidade(palavra)} letras")
+
+
+# exer 8
+tem_celsius = [30, 100, 0]
+
+def converte(temperatura):
+    fah = (temperatura * 1.8) + 32
+    return fah
+
+for tems in tem_celsius:
+    print(f"A temperatura {tems}, convertida é: {converte(tems)}")
+
+
+# exer 9
+desafios = [3, 9, 12]
+
+def dificuldade(desafio):
+    if desafio == 3:
+        print("O desafio é de pouca dificuldade!")
+    elif desafio == 9:
+        print("O desafio é de média dificuldade!")
+    elif desafio ==  12:
+        print("O desafio é de grande dificuldade!")
+
+for desafio in desafios:
+    print(desafio)
+    print(dificuldade(desafio))
+
+
+# exer 10
+palavras = ["Ana Ana", "1DSTB-SENAI", "Subi no Onibus"]
+
+def palindromos(palavras):
+    # na minha cabeça dá para ser um titulo
+    if palavras == 'Subi no Onibus' or palavras == 'Ana Ana':
+        print(palavras)
+        print("É um palíndromos!")
+    else:
+        print(palavras)
+        print("Não é um palíndromos")
+
+for palavra in palavras:
+    print(palindromos(palavra))
+
+
+# exer 12
+num_mate = [3, 7, 9, 25, 26]
+
+def conta_fatorial(numero):
+    fatorial = 1
+    i = 1
+    while i <= numero:
+        fatorial *= i
+        i += 1
+    return fatorial
+
+for numero in num_mate:
+    print(f"{numero}: {conta_fatorial(numero)}")
+"""
+
+
+
