@@ -1,3 +1,6 @@
+
+
+
 class ItemBiblioteca:
     def __init__(self, titulo, ano_publicacao, disponivel):
         if ano_publicacao <= 0:
@@ -69,5 +72,20 @@ class Revista(ItemBiblioteca):
     def obter_info(self):
         return f"N° edição:{self.n_edicao}"
     
-class Biblioteca(ItemBiblioteca, ColecaoLivros, Revista):
-    
+class Biblioteca():
+    def __init__(self):
+        self.livros = {}
+
+    def adicionar_item(self, item:ItemBiblioteca):
+        if not self.livros[item.titulo]:
+            self.livros[item.titulo] = item
+        else:
+            raise Exception("Item já existe")
+
+    def remover_item(self, titulo):
+        self.livros.pop(titulo)
+
+    def listar_itens_disponiveis(self):
+        for livro in self.livros:
+            print(livro)
+        
