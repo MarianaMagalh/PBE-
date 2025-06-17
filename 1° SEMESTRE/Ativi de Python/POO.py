@@ -1,24 +1,24 @@
-class Pessoa:    
-    def __init__(self, nome, idade, cpf, rg):        
-        self.nome = nome        
-        self.idade = idade        
-        self.cpf = cpf        
-        self.rg = rg        
-        self.escolaridade = 'Superior Incompleto'    
-    
-    def apresentar(self): #Apresentação da pessoa        
-        print(f"Olá. Meu nome é {self.nome} e tenho {self.idade} anos.")    
-    
-    def __str__(self): #Converter em string de maneira certa        
-        return f'{self.nome} - {self.idade}'    
-    
-    def __eq__(self, other): #Verificar se os dois são iguais.        
-        if isinstance(other, Pessoa): #pessoa1 == Pessoa            
-            if self.nome == other.nome and self.idade == other.idade and self.cpf == other.cpf and self.rg == other.rg:                
-                return True        
-            return False    
-    
-    
+"""
+class Pessoa:
+    def __init__(self, nome, idade, cpf, rg):
+        self.nome = nome
+        self.idade = idade
+        self.cpf = cpf
+        self.rg = rg
+        self.escolaridade = 'Superior Incompleto'
+
+    def apresentar(self): #Apresentação da pessoa
+        print(f"Olá. Meu nome é {self.nome} e tenho {self.idade} anos.")
+
+    def __str__(self): #Converter em string de maneira certa
+        return f'{self.nome} - {self.idade}'
+
+    def __eq__(self, other): #Verificar se os dois são iguais.
+        if isinstance(other, Pessoa): #pessoa1 == Pessoa
+            if self.nome == other.nome and self.idade == other.idade and self.cpf == other.cpf and self.rg == other.rg:
+                return True
+            return False
+"""
 #def __lt__(self, other): #Se há algo de um menor que o outro    
 # def __le__(self, other): #Se há algo de um menor ou igual que o outro    
 # def __gt__(self, other): #Se há algo de um maior que o outro    
