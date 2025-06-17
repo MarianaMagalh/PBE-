@@ -20,6 +20,10 @@ class ItemBiblioteca:
         status = "Sim" if self.disponivel else "Não"
         return f"Título:{self.titulo}\nAno: {self.ano_publicacao}\nDisponível:{status}"
 
+livro1 = ItemBiblioteca("Hipotese do amor", 2019, True)
+
+print(livro1.obter_info())
+
 class ColecaoLivros(ItemBiblioteca):
     def __init__(self, titulo, ano_publicacao, disponivel,colecao):
         super().__init__(titulo, ano_publicacao, disponivel)
@@ -42,7 +46,28 @@ class ColecaoLivros(ItemBiblioteca):
         for livro_c in self.titulo:
             titulo_colecao.append(livro_c)
 
+class Revista(ItemBiblioteca):
+    def __init__(self, titulo, ano_publicacao, disponivel, n_edicao):
+        super().__init__(titulo, ano_publicacao, disponivel)
+        self.n_edicao = n_edicao
 
-vaojuew = ItemBiblioteca("Scarlet", 2020, False)
+    def atuaizar_edicao(self, nova_edicao):
+        if self.n_edicao >= 0:
+            if not self.nova_edicao:
+                raise Exception("O número da edição é invalido!")
+            
+            self.n_edicao += nova_edicao
+    
+    def restringir_emprestimo(self, dias_max = 14):
+        if self.ano_publicacao <= 2000:
+            dias_max += 7
+            dias_max = False
+        
+        dias_max = True
 
-print(vaojuew.obter_info())
+
+    def obter_info(self):
+        return f"N° edição:{self.n_edicao}"
+    
+class Biblioteca(ItemBiblioteca, ColecaoLivros, Revista):
+    
